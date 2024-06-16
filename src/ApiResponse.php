@@ -2,6 +2,7 @@
 
 namespace MizterFrek\LaravelApiResponser;
 
+use Illuminate\Validation\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
 class ApiResponse
@@ -13,12 +14,12 @@ class ApiResponse
         return $this->successResponse($data, $status, $message);
     }
 
-    public function error(string $message, int $status, array|null $errors = null)
+    public function error(int $status = Response::HTTP_INTERNAL_SERVER_ERROR, string|null $message = null, array|null $errors = null)
     {
-        return $this->errorResponse($message, $status, $errors);
+        return $this->errorResponse($status, $message, $errors);
     }
 
-    public function notFound(string $message = 'Not Found')
+    public function notFound(string|null $message = null)
     {
         return $this->notFoundResponse($message);
     }
@@ -28,7 +29,7 @@ class ApiResponse
         return $this->noContentResponse();
     }
 
-    public function unauthorized(string $message = 'Unauthorized')
+    public function unauthorized(string|null $message = null)
     {
         return $this->unauthorizedResponse($message);
     }

@@ -9,8 +9,8 @@ abstract class Response extends JsonResponse implements ApiResponser
 {
     protected array $body;
 
-    public function __construct($data = null, $status = 200)
+    public function __construct($status = 200)
     {
-        parent::__construct($data, $status, self::HEADERS);
+        parent::__construct($this->body, $status, self::HEADERS);
     }
 }

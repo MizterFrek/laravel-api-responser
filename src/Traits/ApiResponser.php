@@ -13,14 +13,14 @@ trait ApiResponser
         return SuccessResponse::make($data, $status, $message);
     }
 
-    public function errorResponse(string $message, int $status, array|null $errors = null)
+    public function errorResponse(int $status, string|null $message = null, array|null $errors = null)
     {
-        return ErrorResponse::make($message, $status, $errors);
+        return ErrorResponse::make($status, $message, $errors);
     }
 
-    public function notFoundResponse(string $message = 'Not Found')
+    public function notFoundResponse(string|null $message = null)
     {
-        return SuccessResponse::make(status: Response::HTTP_NOT_FOUND, message: $message);
+        return ErrorResponse::make(Response::HTTP_NOT_FOUND, $message);
     }
 
     public function noContentResponse()
@@ -28,8 +28,8 @@ trait ApiResponser
         return response()->noContent();
     }
 
-    public function unauthorizedResponse(string $message = 'Unauthorized')
+    public function unauthorizedResponse(string|null $message = null)
     {
-        return ErrorResponse::make(status: Response::HTTP_UNAUTHORIZED, message: $message);
+        return ErrorResponse::make(Response::HTTP_UNAUTHORIZED, $message);
     }
 }

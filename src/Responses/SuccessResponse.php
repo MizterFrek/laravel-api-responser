@@ -16,7 +16,7 @@ class SuccessResponse extends ApiResponse
 
         $this->appendDataInBody($data);
 
-        parent::__construct($this->body, $status, self::HEADERS);
+        parent::__construct($status, self::HEADERS);
     }
 
     public static function make(mixed $data = null, int $status = 200, string|null $message = null)

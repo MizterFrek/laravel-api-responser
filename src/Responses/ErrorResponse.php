@@ -2,39 +2,36 @@
 
 namespace MizterFrek\LaravelApiResponser\Responses;
 
-use Illuminate\Validation\ValidationException;
 use MizterFrek\LaravelApiResponser\Contracts\Classes\Response as ApiResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class ErrorResponse extends ApiResponse
 {
-    public function __construct(string $message, int $status, array|null $errors = null)
+    public function __construct(int $status = Response::HTTP_INTERNAL_SERVER_ERROR, string|null $message = null, array|null $errors = null)
     {
-        $this->body = $this->errorJsonStructure($message, $status);
+        $this->errorJsonStructure($status);
+
+        if ($message) {
+            $this->addDetailFieldToResult($message);
+        } 
 
         if ($errors) {
             $this->addErrorFieldToResult($errors);
         } 
 
-        parent::__construct($this->body, $status, self::HEADERS);
+        parent::__construct($status, self::HEADERS);
     }
 
-    public static function make(string $message, int $status = 500, array|null $errors = null)
+    public static function make(int $status = Response::HTTP_INTERNAL_SERVER_ERROR, string|null $message = null, array|null $errors = null)
     {
-        return new self($message, $status, $errors);
+        return new self($status, $message, $errors);
     }
-
-    public static function fromValidator(ValidationException $exception)
+    
+    protected function errorJsonStructure(int $code): void
     {
-        return new self($exception->getMessage(), 422, $exception->validator->errors()->getMessages());
-    }
-
-    protected function errorJsonStructure(string $detail = '', int $code = 500): array
-    {
-        return [
+        $this->body = [
             'message' => Response::$statusTexts[$code],
             'code' => $code,
-            'detail' => $detail
         ];
     }
 
@@ -42,6 +39,13 @@ class ErrorResponse extends ApiResponse
     {
         $body = $this->body;
         $body['errors'] = $errors;
+        $this->body = $body;
+    }
+    
+    protected function addDetailFieldToResult(string $detail): void
+    {
+        $body = $this->body;
+        $body['detail'] = $detail;
         $this->body = $body;
     }
 }
