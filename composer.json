@@ -12,7 +12,15 @@
             "email": "jllicagarcia9506@gmail.com"
         }
     ],
+    "require": {
+        "php": "^8.1"
+    },
     "require-dev": {
         "orchestra/testbench": "^9.1"
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
