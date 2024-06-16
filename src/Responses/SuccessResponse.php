@@ -1,13 +1,12 @@
 <?php
 
-namespace MizterFrek\LaravelApiResponser\Http\Responses;
+namespace MizterFrek\LaravelApiResponser\Responses;
 
-use MizterFrek\LaravelApiResponser\Contracts\Classes\ApiResponse;
+use MizterFrek\LaravelApiResponser\Contracts\Classes\Response as ApiResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class SuccessResponse extends ApiResponse
 {
-
     public function __construct(mixed $data = null, int $status = 200, string|null $message = null)
     {
         $this->body = [ 

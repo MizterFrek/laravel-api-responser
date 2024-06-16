@@ -5,7 +5,7 @@ namespace MizterFrek\LaravelApiResponser\Contracts\Classes;
 use Illuminate\Http\JsonResponse;
 use MizterFrek\LaravelApiResponser\Contracts\Interfaces\ApiResponser;
 
-abstract class ApiResponse extends JsonResponse implements ApiResponser
+abstract class Response extends JsonResponse implements ApiResponser
 {
     protected array $body;
 

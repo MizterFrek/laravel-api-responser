@@ -1,9 +1,9 @@
 <?php
 
-namespace MizterFrek\LaravelApiResponser\Http\Responses;
+namespace MizterFrek\LaravelApiResponser\Responses;
 
 use Illuminate\Validation\ValidationException;
-use MizterFrek\LaravelApiResponser\Contracts\Classes\ApiResponse;
+use MizterFrek\LaravelApiResponser\Contracts\Classes\Response as ApiResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class ErrorResponse extends ApiResponse

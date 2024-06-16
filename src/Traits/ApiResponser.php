@@ -2,8 +2,8 @@
 
 namespace MizterFrek\LaravelApiResponser\Traits;
 
-use MizterFrek\LaravelApiResponser\Http\Responses\ErrorResponse;
-use MizterFrek\LaravelApiResponser\Http\Responses\SuccessResponse;
+use MizterFrek\LaravelApiResponser\Responses\ErrorResponse;
+use MizterFrek\LaravelApiResponser\Responses\SuccessResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 trait ApiResponser 
