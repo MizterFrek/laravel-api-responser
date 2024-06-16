@@ -1,9 +1,9 @@
 <?php
 
-namespace MizterFrek\Contracts\Classes;
+namespace MizterFrek\LaravelApiResponser\Contracts\Classes;
 
 use Illuminate\Http\JsonResponse;
-use MizterFrek\Contracts\Interfaces\ApiResponser;
+use MizterFrek\LaravelApiResponser\Contracts\Interfaces\ApiResponser;
 
 abstract class ApiResponse extends JsonResponse implements ApiResponser
 {

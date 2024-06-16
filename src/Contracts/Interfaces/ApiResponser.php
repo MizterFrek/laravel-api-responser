@@ -1,6 +1,6 @@
 <?php
 
-namespace MizterFrek\Contracts\Interfaces;
+namespace MizterFrek\LaravelApiResponser\Contracts\Interfaces;
 
 interface ApiResponser
 {

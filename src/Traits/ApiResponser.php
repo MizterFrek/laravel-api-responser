@@ -1,9 +1,9 @@
 <?php
 
-namespace MizterFrek\Traits;
+namespace MizterFrek\LaravelApiResponser\Traits;
 
-use MizterFrek\Http\Responses\ErrorResponse;
-use MizterFrek\Http\Responses\SuccessResponse;
+use MizterFrek\LaravelApiResponser\Http\Responses\ErrorResponse;
+use MizterFrek\LaravelApiResponser\Http\Responses\SuccessResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 trait ApiResponser 
