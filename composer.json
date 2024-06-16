@@ -1,0 +1,18 @@
+{
+    "name": "mizterfrek/laravel-api-responser",
+    "description": "Laravel Package - Traits and helpers for returning standard API responses",
+    "autoload": {
+        "psr-4": {
+            "Mizterfrek\\LaravelApiResponser\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MizterFrek",
+            "email": "jllicagarcia9506@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^9.1"
+    }
+}
