@@ -1,6 +1,7 @@
 {
     "name": "mizterfrek/laravel-api-responser",
     "description": "Laravel Package - Traits and helpers for returning standard API responses",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Mizterfrek\\LaravelApiResponser\\": "src/"
