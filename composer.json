@@ -25,6 +25,16 @@
         "orchestra/testbench": "^9.1",
         "phpunit/phpunit": "^11.1"
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MizterFrek\\LaravelApiResponser\\Providers\\ApiResponseServiceProvider"
+            ],
+            "aliases": {
+                "ApiResponse": "MizterFrek\\LaravelApiResponser\\Facades\\ApiResponse"
+            }
+        }
+    },
     "config": {
         "sort-packages": true
     },
