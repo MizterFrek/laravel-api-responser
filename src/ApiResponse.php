@@ -2,7 +2,6 @@
 
 namespace MizterFrek\LaravelApiResponser;
 
-use Illuminate\Validation\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
 class ApiResponse
